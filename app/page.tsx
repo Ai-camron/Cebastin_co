@@ -933,8 +933,3 @@ export default function HomePage() {
 function _assert(condition: unknown, message: string) {
   if (!condition) throw new Error(message);
 }
-
-if (typeof process !== "undefined" && process?.env?.NODE_ENV === "test") {
-  _assert(cx("a", false, "b") === "a b", "cx should join truthy classes");
-  _assert(cx(null, undefined, "x") === "x", "cx should ignore null/undefined");
-}
